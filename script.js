@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
       audio.play();
     });
   
+    function generateRandomNumber() {
+        return Math.floor(Math.random() * 10) + 1;
+    }
+
     function startGame() {
       randomNumber = generateRandomNumber();
       const audio = new Audio(`sounds/${randomNumber}.mp3`);
@@ -43,9 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       startTimer();
     }
   
-    function generateRandomNumber() {
-      return Math.floor(Math.random() * 10) + 1;
-    }
+   
   
     function startTimer(startTime = 60) {
       timeLeft = startTime;
@@ -63,21 +65,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function updateLeaderboard() {
-      const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
-      leaderboard.push({ name: playerName, score });
-      localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
-      displayLeaderboard();
+        const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+        const gameNumber = leaderboard.length + 1; // Calculate the game number
+        leaderboard.push({ name: playerName, score, gameNumber }); // Include the game number
+        localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+        displayLeaderboard();
     }
-  
+    
     function displayLeaderboard() {
-      const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
-      leaderboardElement.innerHTML = '';
-      leaderboard.forEach(entry => {
-        const li = document.createElement('li');
-        li.textContent = `${entry.name}: ${entry.score}`;
-        leaderboardElement.appendChild(li);
-      });
+        const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+        leaderboardElement.innerHTML = '';
+        leaderboard.forEach(entry => {
+            const li = document.createElement('li');
+            li.textContent = `${entry.name}: ${entry.score}`;
+            leaderboardElement.appendChild(li);
+        });
     }
+    
   
     function resetGame() {
       score = 0;

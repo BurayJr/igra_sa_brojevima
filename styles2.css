@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FEE140, #F07823);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333; /* Text color */
+  }
+  
+  nav {
+    background-color: #FFB24D; /* Darker shade of orange */
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  nav a.btn:hover {
+    background-color: #FF9000; /* Darker shade of orange */
+  }
+
+  .btn {
+    background-color: #FFA400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+
+  nav button:hover {
+    background-color: #FF9000; /* Darker shade of orange */
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFA300;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  #question {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #answer {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  #submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFC900;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #submit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  #result {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  #leaderboard {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #leaderboard li {
+    background-color: #FFA400; /* Background color for leaderboard items */
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #leaderboard li:nth-child(even) {
+    background-color: #FFA400; /* Alternate background color for even leaderboard items */
+  }
+  
+  
+  

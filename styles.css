@@ -23,6 +23,24 @@ body {
     cursor: pointer;
     font-size: 16px;
   }
+
+  nav a.btn {
+    background-color: #FFA400; /* Orange color from the gradient */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+
+  nav a.btn:hover {
+    background-color: #FF9000; /* Darker shade of orange */
+  }
   
   nav button:hover,#replay-button:hover {
   background-color: #FF9000; /* Darker shade of orange */
@@ -90,23 +108,21 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .leaderboard-container {
-    text-align: center;
-  }
-  
-  .leaderboard-container h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
   #leaderboard {
-    list-style-type: decimal;
-    padding-left: 0;
+    list-style-type: none;
+    padding: 0;
   }
   
   #leaderboard li {
-    font-size: 18px;
-    margin: 5px 0;
+    background-color: #FFA400; /* Background color for leaderboard items */
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #leaderboard li:nth-child(even) {
+    background-color: #FFA400; /* Alternate background color for even leaderboard items */
   }
   
   /* Media Queries for Responsive Design */
