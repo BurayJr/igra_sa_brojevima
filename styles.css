@@ -2,17 +2,21 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #FEE140, #F07823);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333; /* Text color */
   }
   
   nav {
-    background-color: #333;
+    background-color: #FFB24D; /* Darker shade of orange */
     padding: 10px 0;
     text-align: center;
   }
   
   nav button {
-    background-color: #4CAF50;
+    background-color: #FFA400;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -20,9 +24,9 @@ body {
     font-size: 16px;
   }
   
-  nav button:hover {
-    background-color: #45a049;
-  }
+  nav button:hover,#replay-button:hover {
+  background-color: #FF9000; /* Darker shade of orange */
+}
   
   .container {
     max-width: 800px;
@@ -44,10 +48,11 @@ body {
   
   .card {
     width: 60px;
+    
     height: 90px;
     margin: 10px;
-    background-color: white;
-    border: 2px solid #ccc;
+    background-color: #FFD35A; /* Yellow color from the gradient */
+    border: 2px solid #F07823; /* Orange color from the gradient */
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -59,7 +64,7 @@ body {
   }
   
   .card:hover {
-    background-color: #f1f1f1;
+    background-color: #FFC000;
     transform: translateY(-5px);
   }
   
@@ -75,11 +80,14 @@ body {
   }
   
   #replay-button {
-    display: block;
-    margin: 20px auto;
+    background-color: #FFA400; /* Orange color from the gradient */
+    color: white;
+    border: none;
     padding: 10px 20px;
-    font-size: 16px;
     cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .leaderboard-container {
