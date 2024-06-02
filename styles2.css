@@ -46,6 +46,8 @@ body {
     background-color: #FFA300;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    align-items: center;
   }
   
   h1 {
@@ -67,6 +69,28 @@ body {
     margin-bottom: 10px;
     box-sizing: border-box;
   }
+
+  #timer1 {
+    font-size: 2rem;
+    color: #FF4500;
+    background-color: #FFF3E0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+  #timer {
+    font-size: 2rem;
+    color: #FF4500;
+    background-color: #FFF3E0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: inline-block;
+}
   
   #submit-btn {
     width: 100%;
@@ -80,7 +104,7 @@ body {
   }
   
   #submit-btn:hover {
-    background-color: #45a049;
+    background-color: #FF9000;
   }
   
   #result {
