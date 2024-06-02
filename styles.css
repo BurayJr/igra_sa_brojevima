@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  nav {
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  nav button:hover {
+    background-color: #45a049;
+  }
+  
+  .game-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .card {
+    width: 60px;
+    height: 90px;
+    margin: 10px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .card:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-5px);
+  }
+  
+  #message {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  #timer {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  #replay-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .leaderboard-container {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .leaderboard-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #leaderboard {
+    list-style-type: decimal;
+    padding-left: 0;
+  }
+  
+  #leaderboard li {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
