@@ -70,6 +70,27 @@ body {
     box-sizing: border-box;
   }
 
+  .card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover {
+    background-color: #f0f0f0;
+}
+
   #timer1 {
     font-size: 2rem;
     color: #FF4500;
