@@ -44,22 +44,21 @@ document.addEventListener('DOMContentLoaded', function () {
       } while (correctAnswer > 10 || operand1 < operand2);
 
       questionElement.textContent = `${operand1} ${operator} ${operand2} = ?`;
+      createButtons();
   }
 
-  function checkAnswer(selectedCard) {
-      if (isGameActive) {
-          const userAnswer = parseInt(selectedCard.textContent);
+  function checkAnswer(userAnswer) {
+       
           if (userAnswer === correctAnswer) {
               score++;
               resultElement.textContent = 'Correct!';
               resultElement.style.color = 'green';
+              generateQuestion();
           } else {
               resultElement.textContent = 'Incorrect!';
               resultElement.style.color = 'red';
-          }
-          isGameActive = false;
-          endGame();
-      }
+              endGame();
+          }  
   }
 
   function endGame() {
@@ -73,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
       timerElement.textContent = timer;
       startTimer();
       generateQuestion();
+      createButtons();
   }
 
   function updateLeaderboard(playerName, score) {
@@ -96,20 +96,33 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  function createCards() {
-      cardContainer.innerHTML = '';
-      const options = [correctAnswer, correctAnswer + 1, correctAnswer - 1];
-      shuffleArray(options);
-      options.forEach(option => {
-          const card = document.createElement('div');
-          card.textContent = option;
-          card.classList.add('card');
-          card.addEventListener('click', function () {
-              checkAnswer(card);
-          });
-          cardContainer.appendChild(card);
-      });
-  }
+  function createButtons() {
+    cardContainer.innerHTML = '';
+    const options = [correctAnswer, correctAnswer + 1, correctAnswer - 1];
+    shuffleArray(options);
+    options.forEach(option => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.classList.add('card'); // Adding 'card' class to each button
+        cardContainer.appendChild(button);
+    });
+    activateButtons(); // Call activateButtons after creating buttons
+    console.log("Buttons created:", cardContainer.innerHTML); // Logging for debugging
+}
+
+// Function to activate button clicking
+function activateButtons() {
+    const buttons = document.querySelectorAll('.card');
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            console.log("Button clicked"); // Logging for debugging
+            
+                const userAnswer = parseInt(button.textContent);
+                checkAnswer(userAnswer);
+            
+        });
+    });
+}
 
   function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
@@ -128,8 +141,9 @@ document.addEventListener('DOMContentLoaded', function () {
       startTimer();
   });
 
+
   renderLeaderboard();
   generateQuestion();
-  createCards();
+  createButtons();
   startTimer();
 });
