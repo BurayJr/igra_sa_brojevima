@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const changeNameButton = document.getElementById('change-name-btn');
   const leaderboardElement = document.getElementById('leaderboard');
   const timerElement = document.getElementById('timer');
+  const correctSound = new Audio('correct.mp3');
+  const incorrectSound = new Audio('inccorect.mp3');
 
   let operand1, operand2, operator, correctAnswer;
   let playerName = localStorage.getItem('addSubPlayerName') || 'Anonymous';
@@ -48,15 +50,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function checkAnswer(userAnswer) {
+    
        
           if (userAnswer === correctAnswer) {
               score++;
-              resultElement.textContent = 'Correct!';
+              resultElement.textContent = 'Tačno';
               resultElement.style.color = 'green';
+              correctSound.play()
               generateQuestion();
           } else {
-              resultElement.textContent = 'Incorrect!';
+              resultElement.textContent = 'Netačno!';
               resultElement.style.color = 'red';
+              incorrectSound.play();
               endGame();
           }  
   }
@@ -65,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       pauseTimer();
       updateLeaderboard(playerName, score);
       renderLeaderboard();
-      alert(`Game Over! Your final score is: ${score}`);
+      alert(`Kraj igre! Vaš konačni rezultat je: ${score}`);
       score = 0;
       resultElement.textContent = '';
       timer = 60;
@@ -91,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
       leaderboardElement.innerHTML = '';
       leaderboard.forEach((entry, index) => {
           const listItem = document.createElement('li');
-          listItem.textContent = `${index + 1}. ${entry.name} - Score: ${entry.score}`;
+          listItem.textContent = `${index + 1}. ${entry.name} - Rezultat ${entry.score}`;
           leaderboardElement.appendChild(listItem);
       });
   }
@@ -133,7 +138,7 @@ function activateButtons() {
 
   changeNameButton.addEventListener('click', function () {
       pauseTimer();
-      const newName = prompt('Enter your name:', playerName) || 'Anonymous';
+      const newName = prompt('Upiši svoje ime:', playerName) || 'Anonymous';
       if (newName !== playerName) {
           playerName = newName;
           localStorage.setItem('addSubPlayerName', playerName);

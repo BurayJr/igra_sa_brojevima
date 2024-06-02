@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biraju igru</title>
+  <title>Biraj igru</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,7 +12,20 @@
       background-size: cover;
       background-attachment: fixed;
       text-align: center;
-      margin: 50px auto;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 400px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
@@ -42,8 +55,10 @@
   </style>
 </head>
 <body>
-  <h1>Biraj igru</h1>
-  <a href="pogodi_broj.html" class="btn">Pogodi broj</a>
-  <a href="matematika.html" class="btn">Sabiranje i oduzimanje</a>
+  <div class="container">
+    <h1>Biraj igru</h1>
+    <a href="pogodi_broj.html" class="btn">Pogodi broj</a>
+    <a href="matematika.html" class="btn">Sabiranje i oduzimanje</a>
+  </div>
 </body>
 </html>

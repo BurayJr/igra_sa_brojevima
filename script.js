@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const replayButton = document.getElementById('replay-button');
   const leaderboardElement = document.getElementById('leaderboard');
   const changeNameButton = document.getElementById('change-name-button');
+  const correctSound = new Audio('correct.mp3');
+  const incorrectSound = new Audio('inccorect.mp3');
 
   changeNameButton.addEventListener('click', () => {
       const remainingTime = timeLeft;
@@ -105,13 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
           if (i === randomNumber) {
               score++;
               message.textContent = `Tačno! Vaš rezultat je ${score}.`;
+              correctSound.play()
               randomNumber = generateRandomNumber();
               const audio = new Audio(`sounds/${randomNumber}.mp3`);
               audio.play();
           } else {
-              alert(`Pogrešna pretpostavka! Vaš konačni rezultat je ${score}.`);
-              updateLeaderboard();
-              resetGame();
+                incorrectSound.play();
+                alert(`Pogrešna pretpostavka! Vaš konačni rezultat je ${score}.`);
+                updateLeaderboard();
+                resetGame();
           }
       });
       cardsContainer.appendChild(card);
