@@ -130,6 +130,24 @@ body {
   #submit-btn:hover {
     background-color: #FF9000;
   }
+
+  .custom-button {
+    background-color: #FFC900; /* Set the background color */
+    color: white; /* Set the text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add pointer cursor */
+    transition: background-color 0.3s, transform 0.3s; /* Add smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+.custom-button:hover {
+    background-color: #FF9000; /* Darker shade of orange on hover */
+    transform: translateY(-2px); /* Add slight upward movement on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance box shadow on hover */
+}
   
   #result {
     text-align: center;

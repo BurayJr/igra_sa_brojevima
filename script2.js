@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
     options.forEach(option => {
         const button = document.createElement('button');
         button.textContent = option;
-        button.classList.add('card'); // Adding 'card' class to each button
+        button.classList.add('card', 'custom-button'); // Adding 'card' class to each button
         cardContainer.appendChild(button);
     });
     activateButtons(); // Call activateButtons after creating buttons
