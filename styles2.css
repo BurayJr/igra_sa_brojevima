@@ -105,6 +105,41 @@ body {
   #leaderboard li:nth-child(even) {
     background-color: #FFA400; /* Alternate background color for even leaderboard items */
   }
+
+  /* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    #question {
+      font-size: 20px;
+    }
+  
+    #answer {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    #submit-btn {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    #result {
+      font-size: 16px;
+    }
+  
+    #leaderboard li {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    #change-name-btn {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
   
   
   
