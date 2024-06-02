@@ -136,7 +136,7 @@ body {
     color: white; /* Set the text color */
     border: none; /* Remove border */
     padding: 10px 20px; /* Add padding */
-    font-size: 16px; /* Set font size */
+    font-size: 40px; /* Set font size */
     border-radius: 5px; /* Add border radius */
     cursor: pointer; /* Add pointer cursor */
     transition: background-color 0.3s, transform 0.3s; /* Add smooth transition */
