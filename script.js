@@ -49,13 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
     function startTimer(startTime = 60) {
       timeLeft = startTime;
-      timerElement.textContent = `Time left: ${timeLeft}s`;
+      timerElement.textContent = `Preostalo vreme: ${timeLeft}s`;
       timerId = setInterval(() => {
         timeLeft--;
-        timerElement.textContent = `Time left: ${timeLeft}s`;
+        timerElement.textContent = `Preostalo vreme: ${timeLeft}s`;
         if (timeLeft <= 0) {
           clearInterval(timerId);
-          alert(`Time's up! Your final score is ${score}.`);
+          alert(`Vreme je isteklo! Vaš konačni rezultat je ${score}.`);
           updateLeaderboard();
           resetGame();
         }
@@ -94,12 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
       card.addEventListener('click', () => {
         if (i === randomNumber) {
           score++;
-          message.textContent = `Correct! Your score is ${score}.`;
+          message.textContent = `Tačno! Vaš rezultat je ${score}.`;
           randomNumber = generateRandomNumber();
           const audio = new Audio(`sounds/${randomNumber}.mp3`);
           audio.play();
         } else {
-          alert(`Wrong guess! Your final score is ${score}.`);
+          alert(`Pogrešna pretpostavka! Vaš konačni rezultat je ${score}.`);
           updateLeaderboard();
           resetGame();
         }
